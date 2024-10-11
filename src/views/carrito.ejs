@@ -1,0 +1,49 @@
+<%- include('./partials/header') %>
+<%- include('./partials/navbar') %>
+
+<h1 class="text-center text-white">Llegaste a tu carrito <%= user.nombre %></h1>
+
+<div class="container">
+    <h1>Mi Carrito</h1>
+    
+    <% if (carritoItems.length > 0) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Título</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% let totalCarrito = 0; %> <!-- Variable para calcular el total del carrito -->
+                <% carritoItems.forEach(item => { %>
+                    <tr>
+                        <td><img src="<%= item.portadaURL %>" alt="<%= item.titulo %>" style="width: 100px;"></td>
+                        <td><%= item.titulo %></td>
+                        <td>$<%= isNaN(item.precio) ? '0.00' : parseFloat(item.precio).toFixed(2) %></td>
+                        <td>
+                            <button onclick="updateQuantity('<%= item.manga_id %>', -1)">-</button>
+                            <span id="cantidad-<%= item.manga_id %>"><%= item.cantidad %></span>
+                            <button onclick="updateQuantity('<%= item.manga_id %>', 1)">+</button>
+                        </td>
+                        <td class="total-item" id="total-<%= item.manga_id %>">$<%= (isNaN(item.precio) ? 0 : (item.precio * item.cantidad)).toFixed(2) %></td>
+                    </tr>
+                    <% totalCarrito += (isNaN(item.precio) ? 0 : (item.precio * item.cantidad)); %> <!-- Sumar al total del carrito -->
+                <% }) %>
+                <tr>
+                    <td colspan="4" class="text-right"><strong>Total Carrito:</strong></td>
+                    <td id="total-carrito">$<%= totalCarrito.toFixed(2) %></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <a href="#" class="btn btn-primary">Proceder al pago</a>
+    <% } else { %>
+        <p>Tu carrito está vacío.</p>
+    <% } %>
+</div>
+
+<%- include('./partials/footer') %>

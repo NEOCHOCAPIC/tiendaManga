@@ -1,0 +1,85 @@
+<%- include('./partials/header') %>
+<%- include('./partials/navbar') %>
+
+<main class="index">
+  <header class="masthead d-flex">
+      <div class="container text-center my-auto">
+        <% if (!user) { %>
+          <h1 class="mb-1">La mejor tienda de mangas</h1>
+          <h3 class="mb-5">
+              <em>Empieza Ya! registrate</em>
+          </h3>
+          <a href="/login" class="btn btn-primary bg-dark">Empieza Ya!</a>
+          <% } else { %>
+            <h1 class="mb-1">Te agradecemos tu vuelta a la tienda <%= user.nombre %></h1>
+            <h3 class="mb-5">
+              <em>Ve nuestro catalogo</em>
+          </h3>
+          <a href="/catalog" class="btn btn-primary bg-dark">Ir al catalogo</a>
+            <% } %>
+      </div>
+  </header>
+
+  <!-- Carrusel de mangas populares -->
+<section class="popular-mangas container my-5">
+  <h2 class="text-center mb-4 text-white">Mangas Populares</h2>
+  <div id="carouselPopularMangas" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="<%= mangas[3].portadaURL %>" class="d-block img-fluid" alt="<%= mangas[0].titulo %>">
+        <div class="carousel-caption d-md-block">
+          <h5 class="text-white"><%= mangas[3].titulo %></h5> <!-- Título del manga -->
+          <p>Precio: <%= mangas[3].precio %> €</p> <!-- Precio del manga -->
+          <button class="btn btn-success buy-button">Comprar</button> <!-- Botón de compra -->
+        </div>
+      </div>
+      
+      <div class="carousel-item active">
+        <img src="<%= mangas[4].portadaURL %>" class="d-block img-fluid" alt="<%= mangas[0].titulo %>">
+        <div class="carousel-caption d-md-block">
+          <h5 class="text-white"><%= mangas[4].titulo %></h5> <!-- Título del manga -->
+          <p>Precio: <%= mangas[4].precio %> €</p> <!-- Precio del manga -->
+          <button class="btn btn-success buy-button">Comprar</button> <!-- Botón de compra -->
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <img src="<%= mangas[16].portadaURL %>" class="d-block img-fluid" alt="<%= mangas[0].titulo %>">
+        <div class="carousel-caption d-md-block">
+          <h5 class="text-white"><%= mangas[16].titulo %></h5> <!-- Título del manga -->
+          <p>Precio: <%= mangas[16].precio %> €</p> <!-- Precio del manga -->
+          <button class="btn btn-success buy-button">Comprar</button> <!-- Botón de compra -->
+        </div>
+      </div>
+      <!-- Añadir más items según sea necesario -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPopularMangas" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselPopularMangas" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</section>
+
+
+  <!-- Nuevas llegadas -->
+  <section class="new-arrivals container my-5">
+    <h2 class="text-center mb-4 text-white">Nuevas Llegadas</h2>
+    <div class="row">
+      <% mangas.slice(0, 6).forEach((manga) => { %> <!-- Mostramos solo los primeros 3 mangas -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="<%= manga.portadaURL %>" class="card-img-top" alt="<%= manga.titulo %>">
+            <div class="card-body bg-secondary">
+              <h5 class="card-title text-center"><%= manga.titulo %></h5>
+              <p class="card-text"><%= manga.sinopsis %></p>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+  
+<%- include('./partials/footer') %>

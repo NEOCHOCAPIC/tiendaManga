@@ -1,0 +1,39 @@
+<%- include('./partials/header') %>
+<%- include('./partials/navbar') %>
+
+
+<div class="container">
+    
+    <h1 class="text-center">TiendaManga - Catálogo de Mangas</h1>
+    <!-- Filtro de categorías dinámico -->
+    <div id="filtro">
+        <label for="categoria">Filtrar por categoría:</label>
+        <select id="categoria" onchange="filtrarPorCategoria()">
+            <option value="todos">Todos</option>
+            <% categorias.forEach(categoria => { %>
+                <option value="<%= categoria %>"><%= categoria %></option>
+            <% }); %>
+        </select>
+    </div>
+
+
+    <div class="row" id="manga-list">
+        <% mangas.forEach(manga => { %>
+            <div class="col-md-4 mb-4 manga-item" data-categoria="<%= manga.categoria %>">
+                <div class="card h-100 border-primary">
+                    <img src="<%= manga.portadaURL %>" class="card-img-top" alt="<%= manga.titulo %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= manga.titulo %></h5>
+                        <p class="card-text">Autor: <%= manga.autor %></p>
+                        <p class="card-text">Año de publicación: <%= manga.anio_publicacion %></p>
+                        <hr>
+                        <p class="card-text">Precio: $<%= manga.precio %></p>
+                        <a href="#" class="btn btn-success w-100" onclick="addToCart('<%= manga.id %>');">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

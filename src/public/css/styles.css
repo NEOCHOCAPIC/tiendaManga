@@ -1,0 +1,435 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #4f4e4e;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.logo img {
+    max-height: 3rem;
+    width: auto;
+}
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+.logo a:hover {
+    cursor: pointer;
+    
+}
+.search-bar {
+    flex-grow: 1;
+    margin: 0 1rem;
+}
+.search-bar input {
+    width: 90%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+}
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.container {
+    
+    margin: auto;
+    padding: 20px;
+    flex-grow: 1;
+}
+.book-grid {
+display: grid;
+grid-template-columns: repeat(4,1fr);
+gap: 20px;
+    }   
+.book {
+    background: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+.book img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.book h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+.book p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+.price {
+    font-weight: bold;
+    color: #28a745;
+}
+.buy-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+}
+.buy-button:hover {
+    background-color: #0056b3;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 1rem;
+    margin-top: auto;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+.footer-section h3 {
+    margin-top: 0;
+}
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+.footer-section a:hover {
+    text-decoration: underline;
+}
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+.social-icons a {
+    font-size: 1.5rem;
+}
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #555;
+}
+
+.popular-mangas {
+    background-color: #333;
+}
+.carousel {
+    max-height: 60rem; /* Cambia el valor a la altura que prefieras */
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-item img {
+    height: 100%; /* La imagen ocupará toda la altura del contenedor */
+    width: auto; /* La imagen ocupará toda la anchura del contenedor */
+    object-fit: cover; /* Las imágenes mantendrán la proporción sin deformarse */
+    margin: 0 auto;
+}
+
+/* Asegurarse de que el botón de compra se vea bien */
+.buy-button {
+    background-color: #28a745; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 0.5rem 1rem; /* Espaciado dentro del botón */
+    font-size: 1rem; /* Tamaño de fuente del botón */
+    margin-top: 1rem; /* Espaciado superior para el botón */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+}
+
+.buy-button:hover {
+    background-color: #218838; /* Color al pasar el mouse */
+}
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 576px) {
+    .carousel-caption h5 {
+        font-size: 1rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+    .carousel-caption p {
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+    .buy-button {
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño para el botón */
+        padding: 0.4rem 0.8rem; /* Ajustar el espaciado del botón */
+    }
+}
+/* Ajustes para pantallas pequeñas */
+
+.masthead {
+    color: black;
+    min-height: 30rem; /* Asegúrate de que cubra toda la pantalla */
+    max-height: 40rem;
+    width: 100%;
+    padding-top: 5rem;
+    background: url('../img/Biblioteca_3.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+label {
+    font-size: 14px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input:focus {
+    border-color: #888;
+    outline: none;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #5A6268;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #343A40;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .logo-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .btn-login {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.register-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.register-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+.btn-register {
+    width: 100%;
+    padding: 10px;
+    background-color: #5A6268;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #343A40;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .register-box {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .btn-register {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-bar {
+        margin: 1rem 0;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .book-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+}
+#filtro {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.libro {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.libro:hover {
+    transform: translateY(-5px);
+}
+
+.libro img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.libro h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.libro p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.precio {
+    font-weight: bold;
+    color: #e44d26;
+    font-size: 1.2em;
+}
+
+.comprar {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.comprar:hover {
+    background-color: #45a049;
+}
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    text-align: center;
+}

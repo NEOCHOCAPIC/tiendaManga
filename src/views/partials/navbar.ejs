@@ -1,0 +1,26 @@
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="/">
+            <img src="/img/libro.png" alt="Logo de la Librería" style="vertical-align: middle;">
+            TiendaManga
+        </a>
+        
+    </div>
+    
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar libros...">
+    </div>
+    <div class="nav-links">
+        <a href="/catalogo" aria-label="catalogo de libros">⏫ Catalogo</a>
+        <a href="/carrito" aria-label="Carrito de compras">🛒 Carrito</a>
+        <% if (user) { %>
+            <a href="/logout">Logout</a>
+            <h2 class="d-flex align-items-center">Hola <%= user.nombre %> </h2> <!-- Mostrar el nombre del usuario autenticado -->
+        <% } else { %>
+            <a href="/login" aria-label="Iniciar sesión">👤 Iniciar sesión</a>
+            <a href="/signup" aria-label="Registrarse">📝 Registrarse</a>
+            <% } %>
+        <a href="/wish-list" aria-label="Lista de deseos">❤️ Lista de deseos</a>
+    </div>
+</nav>
