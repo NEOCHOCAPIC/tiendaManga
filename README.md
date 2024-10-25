@@ -19,3 +19,4 @@ Node.js
 Express
 MySQL
 JSON Web Tokens (JWT) para la autenticación
+![{C717359B-BF97-4086-9583-F6F4C04D59DB}](https://github.com/user-attachments/assets/63659fe4-8a31-428c-8aa0-640c4e08c6f4)
